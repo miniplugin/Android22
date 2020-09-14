@@ -75,7 +75,7 @@
 - 00월00일~00월00일(30시간) : 사전평가(00월00일) /사후평가(00월00일)
 - 평가항목 : 평가자체크리스트
 
-![ex_screenshot](./git_img/loadmap001.png)
+![ex_screenshot](./git_img/loadmap002.png)
 
 ### 교재별 소스 정보(아래)
 
