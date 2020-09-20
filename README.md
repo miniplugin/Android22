@@ -85,6 +85,7 @@
 #### 무작정 따라하기 챕터3강의안 : https://slidesplayer.org/slide/14087618/
 #### 저자카페: https://cafe.naver.com/techtown
 #### 저자예제소스: https://github.com/mike-jung/DoItAndroid
+#### 앱교육에사용된 이이지: - [download this](git_img/res_image.zip)
 #### 유투브채널: https://www.youtube.com/playlist?list=PLG7te9eYUi7sjJzJR2i5m6wv-X_7K2pVE
 #### AVD용 VT-x 설정확인: https://www.grc.com/securable.htm 프로그램
 #### AVD용 VT-x 설정이enabled 정상인데도 아래와 같은 에러 메시지 보일때
