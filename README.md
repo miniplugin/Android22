@@ -1,114 +1,53 @@
-## 프로그래밍언어활용 (v8.0.0)
+## 애플리케이션 요구사항 분석 (v10.0.0)
  
 ---
 
 - [학습목차](https://github.com/miniplugin/human22)
-- 능력단위 요소: 2001020215_15v3
+- 능력단위 요소: 2001020219_16v4
 
 ---
 
 ### 학습목표(아래)
 
-- 응용소프트웨어 개발에 사용되는 프로그래밍 언어의 기초 문법을 적용하고 언어의 특징과 라이브러리를 활용하여 기본 응용소프트웨어를 구현할 수 있다.
+- 구현하고자 하는 애플리케이션의 요구 사항을 도출, 분석, 명세화 및 검증을 수행할 수 있다.
 
 ### 핵심키워드(아래)
 
-- 변수, 데이터 타입, 연산자, 조건문, 반복문, 사용자 정의 자료형, 추상화, 프로그래밍 최적화, 언어 특성, 라이브러리
+- 요구 사항 도출, 요구 사항 도출 기법, 기능 요구 사항, 비기능 요구 사항, 요구 사항 분석, 요구사항 명세서, 요구 사항 검증
 
-### 기본 문법 활용하기(아래)
+### 현행 시스템 분석하기(아래)
 
-- 자료형 연습: 클래스를 사용하지 않는 자료형 사용하기(아래).
-- Hello World MVC 프로젝트에서 src/test/java 신규생성 패키지에 아래 3개의 클래스 생성한다.
-- 실습: file/new/class 사용 Step1,Step2,Step3 클래스생성, file/new/Enum 사용 Week 클래스생성.
-- 실습: Step1(내장변수와 배열사용),  Step2(사용자정의 자료형 클래스사용), Step3(열거형 자료형클래스 사용) 를 생성.
-- Step1,2실습결과: (아래)
+- 기존 시스템: 전자정부표준프레임워크 템플릿 확인 (심플홈페이지기준) https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:let:function
+- 현행 시스템 파악: 교사가 제시한 제안요청서(RFP)를 분석 .
+- 개발 기술 환경 정의: 교사가 제시한 제안요청서(RFP)를 분석해서 제안서작성[download this](git_img/project_rfp.pptx). 
+- 참고: 조달청 나라장터의 모든 제안요청서는 모두 아래한글(hwp)로 작성되었음. 
+  (확인: 구글검색 > 나라장터 > 통합검색항목 > [스마트 직업교육훈련 플랫폼] 으로 검색)
+  (또는 온라인으로 확인: https://cs.smu.ac.kr/flexer/index.jsp?ftype=hwp&attachNo=485349 )
+- 위 온라인 RFP중 4.기능 상세 요구사항에 내용을 채워 넣습니다.
 
-```
-------------
-홍길동
-45세
-000-0000-0000
-------------
-성춘향
-100세
-111-1111-1111
-------------
-각시탈
-3세
-222-2222-2222
-```
+### 요구사항 확인하기(아래)
 
-- Step3실습결과: 아래처럼 출력 되도록 프로그램 작성.
+- 요구사항 정의: 전자정부표준프레임웍 UI 템플릿 기능에 최신 트렌드를 반영하는 고도화(오픈소스정책적용).
+- 요구사항의 시스템화 타당성 분석: 기존 유료 솔루션 검색해서 분석.
 
-```
-------------------------------------
-외부 라이브러리를 사용한 열거형 자료형 소스
-오늘 요일: 수요일
-수요일에는 축구를 합니다.
-```
+### 분석모델 확인하기(아래)
 
-### 언어특성 활용하기(아래)
-
-- 클래스 연습: 사용자 정의 자료형 사용하기(아래).
-- Hello World MVC 프로젝트에서 src/test/java 패키지에 아래 3개의 클래스 생성한다.
-- 실습1: MainControler(main함수),  MemberVO(String name,int age,String phoneNum필드), MemberService(printMembers매서드) 를 생성.
-- 실습2: 여러명의 회원 정보(MemberVO)를 전달받고(MainControler), 출력(MemberService)하는 메서드 선언하기.
-- 실습결과: 아래처럼 출력 되도록 프로그램 작성.
-
-```
-------------
-홍길동
-45세
-000-0000-0000
-------------
-성춘향
-100세
-111-1111-1111
-------------
-각시탈
-3세
-222-2222-2222
-```
-
-### 외부 라이브러리-모듈 이용하기
-
-- 서버타임 출력하기(아래).
-- 실습1: 위에서 작성한 클래스 중 MainControler를 사용해서 코드생성.
-- 실습코드(아래)
-
-```
-<!-- 서버시간 가져오기 pom.xml -->
-<dependency>
-    <groupId>commons-net</groupId>
-    <artifactId>commons-net</artifactId>
-    <version>3.6</version>
-</dependency>
-<!-- MainControl 클래스에 아래 내용 추가하 후 에러 상황 처리하기를 이용해서 외부 라이브러리 사용방법 확인 -->
-	System.out.println("-서버타임 출력하기-");
-	NTPUDPClient timeClient = new NTPUDPClient();
-	timeClient.setDefaultTimeout(1000);
-	timeClient.open();
-	InetAddress address = InetAddress.getByName(TIME_SERVER);
-    TimeInfo timeInfo = timeClient.getTime(address);
-    //서버로부터 시간 가져오는 코드
-    long returnTime = timeInfo.getMessage().getTransmitTimeStamp().getTime();
-    Date date = new Date(returnTime);
-    LocalDateTime localDateTime = 
-            date.toInstant()
-            .atZone(ZoneId.systemDefault())
-            .toLocalDateTime();//date to LocalDateTime
-    
-    System.out.println("Server 시간: " + localDateTime);//서버 시간!
-    System.out.println("로컬 PC 시간: " + LocalDateTime.now());
-```
-- 실습결과: 아래처럼 출력 되도록 프로그램 작성.
-
-```
--서버타임 출력하기-
-Server 시간: 2020-05-04T16:01:39.261
-로컬 PC 시간: 2020-05-04T16:00:29.890
-```
+- 분석모델 검증: 기존 전자정부프레임웍의 템플릿 기능 확인.
+- 분석모델의 시스템화 타당성 분석: 프로그램 커스터마이징 가능성 분석.
 
 ### 참고자료 출처(아래)
 
 - 위에 사용된 소프트웨어는 자유SW 또는 GNU / LGPL / MIT license 입니다.
+- [NCS학습모듈] https://ncs.go.kr/unity/th03/ncsSearchMain.do :/정보통신/정보기술/정보기술개발/응용SW엔지니어링/요구사항 확인
+
+### 강사 블로그 참고(Java기반 오픈CMS 만들기)
+
+### Ps1. 심플홈템플릿(이하 sht로 표기)을 이용한 CMS 만들기(아래)
+- https://egov-start.herokuapp.com/ 깃주소: https://github.com/miniplugin/egov
+( admin / admin**** )
+
+### Ps2. 작업한 전자정부표준프레임웍(이하 egov로 표기) 기반 CMS 에서 연동 SW 점검1 + 점검2.
+- https://egov-timespace.herokuapp.com/ 깃주소: https://github.com/miniplugin/egov-timespace
+
+### Ps3. 파스타 클라우드 사용 및 프로젝트 배포
+- 파이프라인 구성: http://blog.daum.net/web_design/578
