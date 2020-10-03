@@ -47,7 +47,7 @@
 - 01-02-01 안드로이드 스튜디오 설치
 - https://drive.google.com/file/d/1X9wu2DCLJBbyuZ6BsIxV4U7wLsn-t6WW/view?usp=sharing
 - -----------------------------------
-- 01-03-01~03 슬라이드로 교육 https://slidesplayer.org/slide/14087618/
+- 01-03 부터 ~ 01~03까지 슬라이드로 교육 https://slidesplayer.org/slide/14087618/
 - -----------------------------------
 - 02-01-01 이론: 작업화면 사용 설명
 - 02-01-02 이론: 뷰 정의, XML 형태
