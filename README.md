@@ -14,67 +14,80 @@
 
 ---
 
-### [v1.0.0] UI디자인 (2001020707_17v2)
+### [v1.0.0](https://github.com/miniplugin/human22/tree/app) UI디자인 (2001020707_17v2)
 
 - 00월00일~00월00일(240시간) : 사전평가(00월00일) /사후평가(00월00일)
 - 평가항목: 포트폴리오
 
-### [v2.0.0] UI/UX 요구분석 (2001020704_17v2)
+### [v2.0.0](https://github.com/miniplugin/human22/tree/app) UI/UX 요구분석 (2001020704_17v2)
 
 - 00월00일~00월00일(40시간) : 사전평가(00월00일) /사후평가(00월00일)
 - 평가항목: 포트폴리오
 
-### [v3.0.0] UI/UX 콘셉트 기획 (2001020705_14v1)
+### [v3.0.0](https://github.com/miniplugin/human22/tree/app) UI/UX 콘셉트 기획 (2001020705_14v1)
 
 - 00월00일~00월00일(40시간) : 사전평가(00월00일) /사후평가(00월00일)
 - 평가항목: 문제해결시나리오
 
-### [v4.0.0] UI아키텍처 설계 (2001020706_14v1)
+### [v4.0.0](https://github.com/miniplugin/human22/tree/app) UI아키텍처 설계 (2001020706_14v1)
 
 - 00월00일~00월00일(40시간) : 사전평가(00월00일) /사후평가(00월00일)
 - 평가항목: 평가자체크리스트
 
-### [v5.0.0] UI구현 (2001020708_17v2)
+### [v5.0.0](https://github.com/miniplugin/human22/tree/app) UI구현 (2001020708_17v2)
 
 - 00월00일~00월00일(240시간) : 사전평가(00월00일) /사후평가(00월00일)
 - 평가항목: 포트폴리오
 
-### [v6.0.0] UI테스트 (2001020709_17v2)
+### [v6.0.0](https://github.com/miniplugin/human22/tree/app) UI테스트 (2001020709_17v2)
 
 - 00월00일~00월00일(40시간) : 사전평가(00월00일) /사후평가(00월00일)
 - 평가항목: 포트폴리오
 
-### [v7.0.0](https://github.com/miniplugin/human/tree/v6.0.0) 화면구현 (2001020225_16v4)
+### 위 v1.0.0 부터 v6.0.0 까지는 안드로이드 앱 프로젝트 작업 순서는 아래와 같습니다.
+![ex_screenshot](./git_img/loadmap002.png)
+- HumanApp01: 기획서 작성, 화면구성(로그인 리스트화면, 입력화면, 통계화면)
+- HumanApp02: 내 위치확인, 날씨 연동(Volley 네트워크 스레드 라이브러리, Gson 제이슨 RestApi사용), 사진 연동(사진찍기, 앨범에서 선택)
+- HumanApp03: SQLite 데이터베이스 연동 CRUD(저장, 리스트조회, 수정, 삭제), 통계 조회(차트 라이브러리 사용)
+- HumanApp04: 한글 앱 이름 저장, 앱 실행 아이콘 변경, 다국어 추가(한글, 영문), 메인화면에 스플레쉬 로딩 화면 추가
+- HumanApp05: 스프링 프로젝트와 로그인 연동 처리
+- v1.0.0 부터 v6.0.0 까지 과제물 기준파일 2가지(아래)
+- 과제물v1_한줄일기장_아키텍처 아래(v1은 v2, v3, v4, v5, v6으로 변경해서 해당 내용을 채운 후 제출):
+- https://drive.google.com/file/d/1ti-AoFWQ7fI_OvNBBxNJmghI_GE1yHws/view?usp=sharing
+- 과제물v1_한줄일기장_화면설계 아래(v1은 v2, v3, v4, v5, v6으로 변경해서 해당 내용을 채운 후 제출):
+- https://drive.google.com/file/d/1ZanFHjzTlMc7FZT94SfeC1bZ0RpoGKvs/view?usp=sharing
+![ex_screenshot](./git_img/loadmap003.png)
+
+### [v7.0.0](https://github.com/miniplugin/human22/tree/v7.0.0) 화면구현 (2001020225_16v4)
 
 - 00월00일~00월00일(48시간) : 사전평가(00월00일) /사후평가(00월00일)
 - 평가항목(수준3) : 포트폴리오
 
-### [v8.0.0](https://github.com/miniplugin/human/tree/v4.0.0) 프로그래밍언어활용 (2001020215_15v3)
+### [v8.0.0](https://github.com/miniplugin/human22/tree/v8.0.0) 프로그래밍언어활용 (2001020215_15v3)
 
 - 00월00일~00월00일(80시간) : 사전평가(00월00일) /사후평가(00월00일)
 - 평가항목 : 문제해결시나리오
 
-### [v9.0.0](https://github.com/miniplugin/human/tree/v8.0.0) 서버프로그램 구현 (2001020211_16v4)
+### [v9.0.0](https://github.com/miniplugin/human22/tree/v9.0.0) 서버프로그램 구현 (2001020211_16v4)
 
 - 00월00일~00월00일(60시간) : 사전평가(00월00일) /사후평가(00월00일)
 - 평가항목0 : 포트폴리오
 
-### [v10.0.0](https://github.com/miniplugin/human/tree/v10.0.0) 애플리케이션 요구사항 분석 (2001020219_16v4)
+### [v10.0.0](https://github.com/miniplugin/human22/tree/v10.0.0) 애플리케이션 요구사항 분석 (2001020219_16v4)
 
 - 00월00일~00월00일(50시간) : 사전평가(00월00일) /사후평가(00월00일)
 - 평가항목 : 포트폴리오
 
 
-### [v11.0.0](https://github.com/miniplugin/human/tree/v12.0.0) 애플리케이션 테스트 수행 (2001020227_16v4)
+### [v11.0.0](https://github.com/miniplugin/human22/tree/v11.0.0) 애플리케이션 테스트 수행 (2001020227_16v4)
 
 - 00월00일~00월00일(40시간) : 사전평가(00월00일) /사후평가(00월00일)
 - 평가항목 : 문제해결시나리오
 
-### [v12.0.0] 애플리케이션 배포 (2001020214_16v4)
+### [v12.0.0](https://github.com/miniplugin/human22/tree/v12.0.0) 애플리케이션 배포 (2001020214_16v4)
 
 - 00월00일~00월00일(30시간) : 사전평가(00월00일) /사후평가(00월00일)
 - 평가항목 : 평가자체크리스트
-
 ![ex_screenshot](./git_img/loadmap002.png)
 
 ### 교재별 소스 정보(아래)
@@ -99,15 +112,14 @@
 
 ---
 - 스프링5 프로그래밍 입문
-#### 참고자료: https://github.com/miniplugin/edu_ora/blob/master/spring5.md
 #### 예제소스: https://github.com/madvirus/spring5fs
-#### 강사자료: https://github.com/miniplugin/human/tree/v6.0.0
+#### 참고자료: https://github.com/miniplugin/edu_ora/blob/master/spring5.md
 ---
 
 --- 
 - 오라클SQL과 PL/SQL을 다루는 기술
 #### 예제소스: https://github.com/gilbutITbook/006696
-#### 강사자료: https://github.com/miniplugin/human/tree/v7.0.0 (기존 스프링 웹프로젝트를 오라클용으로_1 )
+#### 참고자료: https://www.oracle.com/database/technologies/oracle-database-software-downloads.html 
 ---
 
 --- 
@@ -134,9 +146,7 @@
 #### 전자정부표준프레임웍3.9버전 개발환경 다운로드(아래 배포사이트) 
  https://www.egovframe.go.kr/EgovDevEnvRelease_300.jsp?menu=3&submenu=2&leftsub=2
 #### 참고자료: Hello World MVC프로젝트 생성시 템플릿확인(아래) 
-#### 참고자료: 템플릿:https://dist.springsource.com/release/STS/help/org.springframework.templates.mvc-3.2.2.zip
-#### 참고자료: 위 템플릿 동시접속 문제로 보이지 않을때 다른 주소: http://timespace12.dothome.co.kr/org.springframework.templates.mvc-3.2.2.zip
-#### 오픈JDK1.8다른버전: https://drive.google.com/open?id=1KmlDcLnqO5dLmAN64_a1sa7Ot9318yby
+#### 오픈JDK1.8 버전: https://drive.google.com/open?id=1KmlDcLnqO5dLmAN64_a1sa7Ot9318yby
 ---
 
 ---
