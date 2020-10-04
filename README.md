@@ -312,9 +312,12 @@
 - 02-11-06 콘텐트 프로바이더(내용제공자:DAO): 다른 앱에서 데이터를 접근할 수 있도록 함.
 - 액티비티(리졸버) -> 프로바이더(DAO) -> 데이터베이스
 - ContentProvider는 앱 구성요소이기때문에 manifest.xml에 등록이 필요.(아래)
-- <permission android:name="org.edu.humanapp.READ_DATABASE" android:protectionLevel="normal"/>
-- <permission android:name="org.edu.humanapp.WRITE_DATABASE" android:protectionLevel="normal"/>
-- <provider ... />
+
+```
+<permission android:name="org.edu.humanapp.READ_DATABASE" android:protectionLevel="normal"/>
+<permission android:name="org.edu.humanapp.WRITE_DATABASE" android:protectionLevel="normal"/>
+<provider ... />
+```
 - 스마트폰 내부데이터를 Resolver를 이용해 접근함.(사용예,사진갤러리를 가져올 수 있음)
 - Resolver 작동은 프로바이더의 CRUD(insert, query, update, delete)로 구현된 것을 사용.
 - content://데이터소스 방식으로 Resolver로 접근.
