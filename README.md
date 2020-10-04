@@ -33,21 +33,23 @@
 - 구현된 UI를 검증하기 위하여 사용성 테스트 계획, 수행, 분석, 결과 보고를 수행 할 수 있다. 
 - 참고자료 휴리스틱평가 : https://drive.google.com/file/d/1ElWz37VM-kiYdoFmIHgSJr2VNapGp3Tg/view?usp=sharing
 
-### 앱 수업에서는 아래 3단계로 진행 됩니다.
-- 파트1:01-01-01(안드로이드 개요) ~ 01-03-01~03(슬라이드교육)
-- 파트3:(한 줄 일기장): 화면디자인, 앱 기획, 화면구성, 화면구현, 위치/날씨/사진찍기 기능, 데이터베이스연동
-- 파트2:02-02-01(레이아웃) ~ 02-05-13(화면구현마지막)
+### 전반기 앱 수업에서는 아래 3단계로 진행 됩니다.
+- 01-01-01(안드로이드 개요)~01-03-01~03(슬라이드교육)
+- 파트3(한 줄 일기장): 화면디자인, 앱 기획, 화면구성, 화면구현, 위치/날씨/사진찍기 기능, 데이터베이스연동
+- 02-02-01(레이아웃) ~ 02-05-13(화면구현마지막)
 
 - 참고내용: https://theorydb.github.io/review/2020/04/03/review-book-doit-android-10/#%ED%99%94%EB%A3%A1%EC%A0%95%EC%A0%90-%ED%95%9C-%EC%A4%84-%EC%9D%BC%EA%B8%B0%EC%9E%A5-%EC%95%B1-%EB%A7%8C%EB%93%A4%EA%B8%B0
 
 ### Do It 안드로이드스튜디오 동영상 강의 요약
+- 번호선언방식: 파트번호-챕터번호-섹션번호(예, 02-01-01)
+- 애플리케이션 4대구성요소: 액티비티,서비스,브로드캐스트리시버,콘텐트 프로바이더
 - https://www.youtube.com/playlist?list=PLG7te9eYUi7sjJzJR2i5m6wv-X_7K2pVE
 - ----------------------------------
 - 01-01-01 안드로이드 개요
 - 01-02-01 안드로이드 스튜디오 설치
 - https://drive.google.com/file/d/1X9wu2DCLJBbyuZ6BsIxV4U7wLsn-t6WW/view?usp=sharing
 - -----------------------------------
-- 01-03 부터 ~ 01~03까지 슬라이드로 교육 https://slidesplayer.org/slide/14087618/
+- 01-03-01~03 슬라이드로 교육 https://slidesplayer.org/slide/14087618/
 - -----------------------------------
 - 02-01-01 이론: 작업화면 사용 설명
 - 02-01-02 이론: 뷰 정의, XML 형태
@@ -129,11 +131,28 @@
 - 상단(햄버거메뉴, 타이틀, 옵션메뉴), 본문, 하단(플로팅액션버튼-스낵바출력)
 ---------------------------------------
 - 02-06-01 서비스와 브로드캐스트 수신자.(사용예, 카톡 푸시 메시지)
-- 02-06-02
-- 02-06-03
-- 02-06-04
-- 02-06-05
-- 02-06-06
+- startService();//화면없이 백그라운드에서 동작. 시스템구성요소는 manifest에서 알고 있어야함.
+- 02-06-02 인텐트로 서비스 시작시킴.
+- 프로젝트 선택 후 New > 서비스 생성.
+- Intent intent = new Intent(실행위치, 실행대상);
+- intent.putExtra("command", "show");
+- intent.putExtra("name", name);
+- startService(intent);
+- @Override onNewIntent(Intent intent) {} 호출
+- 02-06-03 브로드캐스트 수신자(리시버): 앱구성요소는 인텐트로 메시지 전송.
+- SmsReceiver 등록: 프로젝트 선택 후 New > Others > 리시버를 등록해 놓는다.
+- manifest: <intent-filter> 메시지중 필터에 해당하는 것만 받겠다.
+- Bundle bundle = intent.getExtras();
+- SmsMessage[] message = parseSmsMessage(bundle);
+- 02-06-04 파싱: message[cnt] = SmsMessage.createFromPdu((byte[]) obj[cnt]);
+- Build.VERSION.SDK_INT >= Build.VERSION.CODES.M : 안드로이드 버전확인
+- <uses-permission android:name="android.permission.RECEIVEW_SMS"/>
+- 위험권한은 인증해 주는 코드가 필요하지만, 자동인증창이 나오게 하는 jitpack.io 외부 라이브러리 추가
+- Sync Now = 상단 코끼리 모양 아이콘
+- 02-06-05 메인액티비티에 퍼미션 클래스 상속부분 추가
+- implements AutoPermissionsListener
+- AutoPermissions.Companion.loadAllPermissions(this, 101);
+- 02-06-06 SMS메세지 내용 인텐트 Extras로 받아서 화면에 뿌려줌.
 ---------------------------------------
 - 02-07-01 리스트 만드는 과정(세로데이터에 강점:어댑터로 데이터 바인딩후 item선택기능)
 - 예전엔 ListView -> 지금은 RecyclerView 사용
@@ -185,38 +204,158 @@
 - 위 방식은 너무 혼란스럽기 때문에 핸들러를 상속하지 말고 Thread안에 아래처럼 처리
 - handler.post(new Runnable() {...public void run() {...} });
 - 02-09-03 AsyncTask 로 쓰레드안에 코드와 화면갱신용 핸들러 사용하는 작업단위
-- AsyncTask 실습 프로그레시바위젯으로 값 증가처리.
+- AsyncTask 실습 프로그레시바 위젯으로 값 증가처리.
 - class BackgroundTask extends AsyncTask<Integer, Integer, Integer> {.쓰레드 실행전, 후, doInBackground실행=UI업데이트..}
 - AsyncTask 실행은 아래처럼.
 - 1) BackgroundTask task = new BackgroundTask();
 - 2) task.execute();
 ---------------------------------------
-- 02-10-01 네트워크 프로그래밍(소켓통신 + 스레드사용 핸들러로 UI업데이트)
+- 02-10-01 네트워크 프로그래밍(스프링 프로젝트 RestAPI와 연동된작업으로 대체)
+- 소켓통신 + 스레드사용 핸들러로 UI업데이트
 - 2-tier(C/S모델), 3-tier(Client/응용Server/데이터Server)
-- Volley라이브러리사용해서 스레드사용 핸들러처리.
-- json타입 -> gson 라이브러리로 객체화 후 데이터처리.
-- 02-10-02
-- 02-10-03
-- 02-10-04
-- 02-10-05
-- 02-10-06
-- 02-10-07
-- 02-10-08
-- 02-10-09
+- Volley라이브러리사용해서 스레드사용 핸들러처리를 대체.
+- json타입 -> gson 라이브러리로 json데이터를 객체화 후 데이터처리.
+- 02-10-02 소켓 테스트용 1개 액티비티에 클라이언트 - 서버 구성하기.
+- final 로 변수를 선언하면, 스레드 메서드 내 에서도 사용 가능하다.
+- 02-10-03 클라이언트 소켓연결 및 데이터 전송(아래)
+- Socket sock = new Socket("localhost", 5001);
+- ObjectOutputStream outstream = new ObjectOutputStream(sock.getOutperStream());
+- outstream.writeObject(data);
+- outstream.flush();//버퍼 비우기
+- ObjectInputStream instream = new ObjectInputStream(sock.getInperStream());
+- String input = (String) instream.readObject();
+- sock.close();//자원반납
+- 서버시작(아래)
+- new Thread(new Runnable() { @Override public void run(){startServer();} } );
+- ServerSocket server = new ServerSocket(port);
+- while(true) {
+- Socket sock = server.accept();
+- InetAddress clientHost = sock.getLocalAddress();
+- int clientPort = sock.getPort();
+- ObjectInputStream instream = new ObjectInputStream(sock.getInperStream());
+- String input = (String) instream.readObject(); 
+- println("수신데이터: " + input);
+- ObjectOutputStream outstream = new ObjectOutputStream(sock.getOutperStream());
+- outstream.writeObject(input);
+- outstream.flush();//버퍼 비우기
+- println("데이터보냄:");
+- sock.close();
+- }
+- 02-10-04 핸들러 사용해서 UI업데이트
+- public void println(String data) {
+- handler.post(new Runnable() {
+- @Override public void run() {
+- output1.append(data + "\n");
+- }
+- }
+- }
+- 02-10-05 실무에서는 소켓(항상연결)방식 보다는 웹 방식(RestAPI)이 많이 사용됨.
+- HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+- manifest파일: <application android:usesCleartextTraffic="true" ... 추가/>
+- 02-10-06 HttpURLConnection 대신에 Volley 라이브러리 사용함(핸들러 필요없음).
+- build.gradle[app] 에서 dependencies 의존성 추가.
+- 볼리사용법(아래)
+- 1.요청객체 만들기: StringRequest request = new StringRequest(
+- Request.Method.GET,
+- RestApi주소문자,
+- new Response.Listener<String>() {
+- @Override public void onResponse(String response) {
+- 
+- }
+- },
+- new Response.ErrorListener() {
+- @Override public void onErrorResponse(VolleyError error) {
+- 
+- }
+- }
+- ){
+- 콘텍스트메뉴->generator>Override Method>getParames선택
+- };
+- request.setShouldCache(false);//요청보내고 캐시 지우기
+- requestQueue.add(request);//Volley로 요청보냄 실행.
+- static RequestQueue requestQueue;
+- 2. onCreate()내 추가 requestQueue = Volley.newRequestQueue(getApplicationContext());
+- 02-10-07 gson 라이브러리로 json데이터 파싱하기(값을 하나씩 뽑아내기)
+- 02-10-08 json데이터에 맞는 VO클래스 만들기(MovieListResult, MovieList, Movie)
+- Gson gson = new Gson();
+- MovieList movieList = gson.fromJson(response, MovieList.class);
+- 02-10-09 리사이클러뷰를 이용해서 데이터를 바인딩해서 화면에 출력하기.
+- 어댑터 -> 리사이클러.뷰홀더(itemView) 바인딩
+- 영화정보URL: 
+- http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=430156241533f1d058c603178cc3ca0e&targetDt=20200501
 ---------------------------------------
 - 02-11-01 데이터베이스 사용(스마트폰내장-SQLite사용)
-- 02-11-02
-- 02-11-03
-- 02-11-04
-- 02-11-05
-- 02-11-06
-- 02-11-07
-- 02-11-08
-- 02-11-09
-- 02-11-10
-- 02-11-11
-- 02-11-12
-- 02-11-13
+- 02-11-02 메인액티비티에 DB만들기, 테이블만들기.(변수활용:변수지정, 값할당)
+- SQLiteDatabase database = openOrCreateDatabase(databaseName, MODE_PRIVATE, null);
+- String sql = "create table if not exists " + tableName + "(id integer PRIMARY KEY autoincrement, name text, age integer, mobile text)";
+- database.execSQL(sql);
+- 02-11-03 레코드 추가: 
+- String sql = "insert into " + tableName + "(name,age,mobile) values('홍길동',20,'010-0000-0000)";
+- database.execSQL(sql);
+- 02-11-04 레코드 조회: 관리도구 https://sqlitebrowser.org/dl/ 설치
+- 02-11-05 DB Browser for SQLite 프로그램사용(*.db 열기): Device file Explorer메뉴
+- 레코드 출력
+- String sql = "select id,name,age,mobile from " + tableName;
+- Cursor cursor = database.rawQuery(sql, null);
+- int recordCount = cursor.getCount();
+- for(int cnt=0;cnt<recordCount;cnt++) {
+- cursor.moveToNext();
+- int id = cursor.getInt(0);
+- String name = cursor.getString(1);
+- int age = cursor.getInt(2);
+- String mobile = cursor.getString(3);
+- }
+- cursor.close();
+- DatabaseHelper클래스 사용(DB생성,커넥션,CRUD를 간편하게 사용하게 도와주는 클래스)
+- public class DatabaseHelper extends SQLiteOpenHelper {}
+- UX/UI 단원과는 거리가 있기 때문에 아래는 시간이 남으면 진행
+- 02-11-06 콘텐트 프로바이더(내용제공자:DAO): 다른 앱에서 데이터를 접근할 수 있도록 함.
+- 액티비티(리졸버) -> 프로바이더(DAO) -> 데이터베이스
+- ContentProvider는 앱 구성요소이기때문에 manifest.xml에 등록이 필요.(아래)
+- <permission android:name="org.edu.humanapp.READ_DATABASE" android:protectionLevel="normal"/>
+- <permission android:name="org.edu.humanapp.WRITE_DATABASE" android:protectionLevel="normal"/>
+- <provider ... />
+- 스마트폰 내부데이터를 Resolver를 이용해 접근함.(사용예,사진갤러리를 가져올 수 있음)
+- Resolver 작동은 프로바이더의 CRUD(insert, query, update, delete)로 구현된 것을 사용.
+- content://데이터소스 방식으로 Resolver로 접근.
+- 02-11-07 DatabaseHelper클래스 사용 후 프로바이더 클래스 만들기
+- 클래스 내부에서 콘텍스트메뉴 > generate > Implement Methods > 2개 생성
+- 클래스 내부에서 콘텍스트메뉴 > generate > Constructor > 1개 첫번째 생성
+- public class PersonProvider extends ContentProvider {}
+- 클래스 내부에서 콘텍스트메뉴 > generate > Implement Methods > 전체 생성
+- 02-11-08 프로바이더 클래스의 insert, delete, update메서드, URI(Resolver접근용) 만들기.
+- 02-11-09 프로바이더 클래스의 query 메서드 만들기. 
+- 메인액티비티에 CRUD호출(아래)
+- ContentsValues values = new ContentsValues();
+- values.put("name", "홍길동");
+- Uri uri = new Uri.Builder().build().parse("contents://org.edu.humanapp/person");
+- uri = getContentResolver().insert(uri, values);//프로바이더 구현 메서드 호출
+- while(cursor.moveToNext()) {
+- String name = cursor.getString(cursor.getColumnIndex(columns[0]));
+- int age = cursor.getInt(cursor.getColumnIndex(columns[1]));
+- String mobile = cursor.getString(cursor.getColumnIndex(columns[2])) 
+- }
+- 02-11-10 메인액티비티에서 프로바이더 구현 메서드 호출(queryPerson, updatePerson)
+- 02-11-11 액티비티에서 리졸버를 이용해서 앨범갤러리, 연락처에 접근하기.
+- Intent 메세지 객체 사용: Intent intent = new Intent();
+- intent.setType("image/*");
+- intent.setAction(Intent.ACTION_GET_CONTENT);
+- Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+- 콘텍스트메뉴 -> generate -> OverrideMethod -> onActivityResult()선택
+- ContentResolver resolver = getContentResolver();
+- InputStream instream = resolver.openInputStream(fileUri);
+- 02-11-12 외장 SD카드접근을 위한 권한 설정(위험권한 자동부여)
+- 일반권한, 위험권한 기술참조: https://programmingnote.tistory.com/24
+- app gradle 에서 추가: repositores { maven{ url 'https://jitpack.io' } }
+- implementation 'com.github.com.pedroSG94:AutoPermissions:1.0.3' 의존성 추가
+- 02-11-13 ContentResolver를 이용해서 연락처프로바이더에서 연락처 정보 가져오기
+- cursor 사용
+- cursor = getContentResolver().query(ContactsContract.Data.CONTENT_URI, null, ...)
+- 향상된 for문사용
+- for(String column:columns) {
+- int index = cursor.getColumnIndex(column);
+- String columnOutput = ("#"+index+":["+column+"]"+ cursor.getString(index);
+- }
 ---------------------------------------
 - 02-12-01 그래픽처리(ondraw()를 호출하여 뷰영역을 다시 그리게 하는 함수)
 - 02-12-02

@@ -18,9 +18,9 @@ git push origin master
 ### 태그 고정버전 사용법
 ```
 git add .
-git commit -m 'app v1.0.0'
-git tag -d app v1.0.0
-git tag app v2.0.0
-git push origin :app v1.0.0
-git push origin app v1.0.0
+git commit -m 'app'
+git tag -d app
+git tag app
+git push origin :app
+git push origin app
 ```
