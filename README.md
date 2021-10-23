@@ -56,6 +56,7 @@
 - https://drive.google.com/file/d/1ti-AoFWQ7fI_OvNBBxNJmghI_GE1yHws/view?usp=sharing
 - 과제물v1_한줄일기장_화면설계 아래(v1은 v2, v3, v4, v5, v6으로 변경해서 해당 내용을 채운 후 제출):
 - https://drive.google.com/file/d/1ZanFHjzTlMc7FZT94SfeC1bZ0RpoGKvs/view?usp=sharing
+- 작업결과 깃소스: https://github.com/miniplugin/SingleDiary
 ![ex_screenshot](./git_img/loadmap003.png)
 
 ### [v7.0.0](https://github.com/miniplugin/human22/tree/v7.0.0) 화면구현 (2001020225_16v4)
