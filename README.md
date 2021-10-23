@@ -45,6 +45,7 @@
 - 평가항목: 포트폴리오
 
 ### 위 v1.0.0 부터 v6.0.0 까지는 안드로이드 앱 프로젝트 작업 순서는 아래와 같습니다.
+- 사전 지식 습득용 실습소스: https://github.com/miniplugin/SQLite-kimilguk
 ![ex_screenshot](./git_img/loadmap001.png)
 - HumanApp01: 기획서 작성, 화면구성(스플레쉬 로딩 화면, 로그인, 리스트화면, 입력화면, 통계화면)
 - HumanApp02: 내 위치확인, 날씨 연동(Volley 네트워크 스레드 라이브러리, Gson 제이슨 RestApi사용), 사진 연동(사진찍기, 앨범에서 선택)
