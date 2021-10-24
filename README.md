@@ -14,6 +14,7 @@
 
 ---
 
+### 아래 v1.0.0 부터 v6.0.0 까지는 안드로이드 앱 프로젝트.
 ### [v1.0.0](https://github.com/miniplugin/human22/tree/app) UI디자인 (2001020707_17v2)
 
 - 00월00일~00월00일(240시간) : 사전평가(00월00일) /사후평가(00월00일)
@@ -60,6 +61,7 @@
 - 작업결과 깃소스: https://github.com/miniplugin/SingleDiary
 ![ex_screenshot](./git_img/loadmap003.png)
 
+### 아래 v7.0.0 부터 v12.0.0 까지는 스프링 웹 프로젝트 작업 순서는 아래와 같습니다.
 ```
 ### [v7.0.0](https://github.com/miniplugin/human22/tree/v7.0.0) 화면구현 (2001020225_16v4)
 
