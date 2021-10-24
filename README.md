@@ -54,12 +54,13 @@
 - HumanApp05: 스프링 프로젝트와 로그인 연동 처리
 - v1.0.0 부터 v6.0.0 까지 과제물 기준파일 2가지(아래)
 - 과제물v1_한줄일기장_아키텍처 아래(v1은 v2, v3, v4, v5, v6으로 변경해서 해당 내용을 채운 후 제출):
-- https://drive.google.com/file/d/1ti-AoFWQ7fI_OvNBBxNJmghI_GE1yHws/view?usp=sharing
+- https://docs.google.com/spreadsheets/d/1-a_gOm0Ul9lcj0LIfzIjTeX_mKdbV2_o/edit?usp=sharing&ouid=100565036297940839482&rtpof=true&sd=true
 - 과제물v1_한줄일기장_화면설계 아래(v1은 v2, v3, v4, v5, v6으로 변경해서 해당 내용을 채운 후 제출):
-- https://drive.google.com/file/d/1ZanFHjzTlMc7FZT94SfeC1bZ0RpoGKvs/view?usp=sharing
+- https://docs.google.com/presentation/d/1LDnUIZW9N4SQUdp8BWsZbBGOb3d7fSSB/edit?usp=sharing&ouid=100565036297940839482&rtpof=true&sd=true
 - 작업결과 깃소스: https://github.com/miniplugin/SingleDiary
 ![ex_screenshot](./git_img/loadmap003.png)
 
+```
 ### [v7.0.0](https://github.com/miniplugin/human22/tree/v7.0.0) 화면구현 (2001020225_16v4)
 
 - 00월00일~00월00일(48시간) : 사전평가(00월00일) /사후평가(00월00일)
@@ -152,18 +153,7 @@
 
 ---
 #### 학생PC 환경 
-- 기본브라우저: 크롬 ( 설정: Flash플레이어 허용-교사 다음카페에 과제물제출을 위해서... )
-- 다음카페 도움말: https://cs.daum.net/faq/36/4417.html?faqId=32547
-- 과제물제출처: 교사 다음카페 ( http://cafe.daum.net/human22 ) 학생 카페가입 후 교사가 정회원처리 후 이용가능.
-- 교사PC화면공유SW설치(FCC): https://drive.google.com/file/d/1H5efmROpNFm2zY33RgSx5jsETLI795Ga/view?usp=sharing
-
-#### 매달 초 자리바꾸기 공개용프로그램 자리이동.
-- 변경기준: 자리바꾸기 공개용프로그램-주최자:교사(아래)
-- [자리바꾸기 공개용프로그램 배포처 확인 링크](https://sciencelove.com/2353)
-- 자리 이동 후 작업내용(git소스) 초기화 방법(아래)
-- 이클립스에서 다른 학생의 기존 프로젝트 삭제
-- 작업폴더 터미널에서 깃저장소 복제: git clone 본인 깃주소
-- 이클립스에서 작업폴더에 프로젝트 임포트(import)
-- 이클립스 메뉴에서 Window>Preferences>Team>Git>Configuration 에서 결과확인
-- 이전과 동일하게 학생 본인 작업 시작
----
+- 기본브라우저: 크롬
+- 코라나19 원격PC화면공유SW설치(무료): https://anydesk.com/en
+- 출석수업시 교사PC화면공유SW설치(FCC): https://drive.google.com/file/d/1H5efmROpNFm2zY33RgSx5jsETLI795Ga/view?usp=sharing
+```
